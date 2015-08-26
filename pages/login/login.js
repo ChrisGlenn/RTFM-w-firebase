@@ -1,9 +1,8 @@
 angular.module('rtfmApp')
-.controller('loginPageController', function($scope, $location){
-
+.controller('loginPageController', function($scope, $location, userService){
+	
     $scope.loginWithGoogle = function(){
-        //TODO: Actually login with google
-        $location.path('main')
+        userService.loginWithGoogle();
     }
 
 });

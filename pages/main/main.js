@@ -1,5 +1,5 @@
 angular.module('rtfmApp')
-.controller('mainPageController', function($scope, $location, userService, threadService){
+.controller('mainPageController', function($scope, $location, userService, threadService, fb, $firebaseAuth){
 
     $scope.user = userService.getLoggedInUser();
 
@@ -28,7 +28,7 @@ angular.module('rtfmApp')
 
     $scope.logout = function(){        
         //Todo: actually log out;
-        $location.path('login');
+        userService.logOut();
     }
 
 });
